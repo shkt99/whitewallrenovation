@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -244,13 +246,13 @@ export default function Home() {
               viewport={{ once: true }}
             >
               What Our Clients Are Saying
-            </h2>
+            </motion.h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               Don&apos;t just take our word for it. Here&apos;s what our satisfied
               customers have to say about their experience with White Wall
               Renovation.
             </p>
-          </div>
+          </motion.div>
           <TestimonialCarousel />
         </div>
       </section>
