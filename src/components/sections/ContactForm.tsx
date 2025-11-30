@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -71,13 +72,23 @@ export function ContactForm({ showCard = true, onSuccess }: ContactFormProps) {
 
   if (isSubmitted) {
     return (
-      <Card className={showCard ? "" : "border-0 shadow-none bg-transparent"}>
-        <CardContent className="p-8 text-center">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h3 className="font-heading font-bold text-2xl mb-2">Thank You!</h3>
-          <p className="text-muted-foreground mb-6">
-            Your message has been sent successfully. We'll get back to you within 24 hours.
-          </p>
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Card className={showCard ? "" : "border-0 shadow-none bg-transparent"}>
+          <CardContent className="p-8 text-center">
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 0.6 }}
+            >
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+            </motion.div>
+            <h3 className="font-heading font-bold text-2xl mb-2">Thank You!</h3>
+            <p className="text-muted-foreground mb-6">
+              Your message has been sent successfully. We'll get back to you within 24 hours.
+            </p>
           <Button
             variant="outline"
             onClick={() => setIsSubmitted(false)}
@@ -87,6 +98,7 @@ export function ContactForm({ showCard = true, onSuccess }: ContactFormProps) {
           </Button>
         </CardContent>
       </Card>
+      </motion.div>
     );
   }
 

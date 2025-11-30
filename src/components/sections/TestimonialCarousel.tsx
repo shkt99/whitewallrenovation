@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -92,20 +93,24 @@ export function TestimonialCarousel() {
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
       <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+        <motion.div
+          className="flex"
+          animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={testimonial.id}
               className="flex-shrink-0 px-3"
               style={{ width: `${100 / itemsPerView}%` }}
+              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0.7 }}
+              transition={{ duration: 0.5 }}
             >
               <TestimonialCard testimonial={testimonial} index={index} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="flex items-center justify-center gap-4 mt-8">

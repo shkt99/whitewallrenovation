@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { companyInfo } from "@/lib/schema";
 
@@ -18,21 +19,45 @@ export function CTASection({
 }: CTASectionProps) {
   if (variant === "image" && backgroundImage) {
     return (
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <motion.section 
+        className="relative py-20 md:py-28 overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <motion.div 
+          className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="max-w-2xl">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
+            <motion.h2 
+              className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               {title}
-            </h2>
-            <p className="text-white/80 text-base md:text-lg mb-8">
+            </motion.h2>
+            <motion.p 
+              className="text-white/80 text-base md:text-lg mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               {description}
-            </p>
+            </motion.p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button
@@ -55,10 +80,10 @@ export function CTASection({
                   {companyInfo.phoneFormatted}
                 </Button>
               </a>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     );
   }
 

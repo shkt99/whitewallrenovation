@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { companyInfo } from "@/lib/schema";
 import { useEffect, useRef } from "react";
@@ -62,25 +63,53 @@ export function Hero({
         aria-label="Modern renovated home interior"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-      <div
+      <motion.div
         ref={contentRef}
         className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center will-change-transform"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
-          <p className="text-white/80 text-sm md:text-base font-medium tracking-wider uppercase">
+          <motion.p 
+            className="text-white/80 text-sm md:text-base font-medium tracking-wider uppercase"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             Welcome to
-          </p>
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
+          </motion.p>
+          <motion.h1 
+            className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+          >
             {title}
-          </h1>
-          <p className="font-heading text-xl md:text-2xl lg:text-3xl text-white/90 font-medium">
+          </motion.h1>
+          <motion.p 
+            className="font-heading text-xl md:text-2xl lg:text-3xl text-white/90 font-medium"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             {subtitle}
-          </p>
-          <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          </motion.p>
+          <motion.p 
+            className="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
             {description}
-          </p>
+          </motion.p>
           {showCTA && (
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
               <Link href="/contact">
                 <Button
                   size="lg"
@@ -102,10 +131,10 @@ export function Hero({
                   {companyInfo.phoneFormatted}
                 </Button>
               </a>
-            </div>
+            </motion.div>
           )}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

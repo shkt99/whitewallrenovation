@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/schema";
@@ -25,7 +26,14 @@ export function ServiceCard({ service, showLearnMore = true }: ServiceCardProps)
   const image = serviceImages[service.id] || "/images/basement_renovation_before-after.png";
 
   return (
-    <Card className="group overflow-visible border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
+    >
+      <Card className="group overflow-visible border border-border bg-card transition-all duration-300 hover:shadow-lg">
       <div className="aspect-video overflow-hidden rounded-t-lg relative">
         <Image
           src={image}
@@ -55,7 +63,8 @@ export function ServiceCard({ service, showLearnMore = true }: ServiceCardProps)
           </Link>
         )}
       </CardContent>
-    </Card>
+      </Card>
+    </motion.div>
   );
 }
 
@@ -71,11 +80,28 @@ export function ServicesGrid({ services, columns = 3 }: ServicesGridProps) {
     4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
   return (
-    <div className={`grid ${gridCols[columns]} gap-6 md:gap-8`}>
+    <motion.div 
+      className={`grid ${gridCols[columns]} gap-6 md:gap-8`}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {services.map((service) => (
         <ServiceCard key={service.id} service={service} />
       ))}
-    </div>
+    </motion.div>
   );
 }
