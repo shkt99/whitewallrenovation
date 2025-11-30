@@ -57,7 +57,7 @@ export function Header() {
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" data-testid="link-logo" onClick={handleHomeClick} className="flex items-center">
+          <Link href="/" data-testid="link-logo" onClick={handleHomeClick} className="flex items-center bg-white rounded-lg p-2">
             <Image 
               src="/images/logo.png" 
               alt="White Wall Renovation Logo"
