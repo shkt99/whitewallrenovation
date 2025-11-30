@@ -59,10 +59,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" data-testid="link-logo" onClick={handleHomeClick} className="flex items-center">
             <Image 
-              src="/images/logo.webp" 
+              src="/images/logo.png" 
               alt="White Wall Renovation Logo"
-              width={120}
-              height={50}
+              width={140}
+              height={60}
               className="h-12 md:h-14 w-auto"
             />
           </Link>
