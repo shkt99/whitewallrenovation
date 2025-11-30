@@ -1623,6 +1623,9 @@ video {
 .bg-white\/20 {
   background-color: rgb(255 255 255 / 0.2);
 }
+.bg-white\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
 .bg-white\/95 {
   background-color: rgb(255 255 255 / 0.95);
 }
