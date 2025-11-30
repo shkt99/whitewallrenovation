@@ -1,21 +1,41 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import { Home, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
-          </p>
-        </CardContent>
-      </Card>
-    </div>
+    <main
+      id="main-content"
+      className="min-h-screen flex items-center justify-center bg-background pt-20"
+    >
+      <div className="max-w-md mx-auto px-4 text-center">
+        <div className="mb-8">
+          <span className="text-8xl font-heading font-bold text-primary/20">404</span>
+        </div>
+        <h1 className="font-heading font-bold text-3xl md:text-4xl mb-4">
+          Page Not Found
+        </h1>
+        <p className="text-muted-foreground text-base md:text-lg mb-8">
+          Sorry, the page you're looking for doesn't exist or has been moved.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href="/">
+            <Button size="lg" data-testid="button-home">
+              <Home className="w-4 h-4 mr-2" />
+              Go Home
+            </Button>
+          </Link>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => window.history.back()}
+            data-testid="button-back"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Go Back
+          </Button>
+        </div>
+      </div>
+    </main>
   );
 }
