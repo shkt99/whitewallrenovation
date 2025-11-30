@@ -9,7 +9,7 @@ import { SEO } from "@/components/SEO";
 
 import heroImage from "@assets/generated_images/modern_living_room_renovation.png";
 import beforeImage from "@assets/generated_images/worn_bathroom_before_renovation.png";
-import afterImage from "@assets/generated_images/modern_bathroom_after_renovation.png";
+import afterImage from "@assets/generated_images/renovated_bathroom_after_transformation.png";
 
 export default function Gallery() {
   return (
