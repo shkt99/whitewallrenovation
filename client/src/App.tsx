@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
+
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,6 +14,16 @@ import ServiceDetail from "@/pages/ServiceDetail";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
+import React from "react";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  // Scroll to top on every route change
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+  return null;
+}
 
 function Router() {
   return (
@@ -33,6 +44,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LocalBusinessSchema />
+        <ScrollToTop />
         <div className="min-h-screen flex flex-col">
           <Header />
           <Router />

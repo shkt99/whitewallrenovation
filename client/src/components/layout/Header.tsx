@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { companyInfo } from "@shared/schema";
 
 const navLinks = [
@@ -27,6 +32,21 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to Hero section if already on home page
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (location === "/") {
+      e.preventDefault();
+      const heroSection = document.querySelector(
+        "section[aria-label='Hero section']"
+      );
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -41,32 +61,60 @@ export function Header() {
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" data-testid="link-logo">
+          <Link href="/" data-testid="link-logo" onClick={handleHomeClick}>
             <span className="font-heading font-bold text-xl md:text-2xl tracking-tight">
-              <span className={isScrolled ? "text-foreground" : "text-white"}>White Wall</span>
-              <span className={isScrolled ? "text-primary" : "text-white/90"}> Renovation</span>
+              <span className={isScrolled ? "text-foreground" : "text-white"}>
+                White Wall
+              </span>
+              <span className={isScrolled ? "text-primary" : "text-white/90"}>
+                {" "}
+                Renovation
+              </span>
             </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    location === link.href
-                      ? isScrolled
-                        ? "bg-primary/10 text-primary"
-                        : "bg-white/20 text-white"
-                      : isScrolled
-                      ? "text-foreground/80 hover:text-foreground hover:bg-muted"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`}
-                  data-testid={`link-nav-${link.label.toLowerCase()}`}
+            {navLinks.map((link) =>
+              link.href === "/" ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleHomeClick}
                 >
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+                  <span
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                      location === link.href
+                        ? isScrolled
+                          ? "bg-primary/10 text-primary"
+                          : "bg-white/20 text-white"
+                        : isScrolled
+                        ? "text-foreground/80 hover:text-foreground hover:bg-muted"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
+                    data-testid={`link-nav-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ) : (
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                      location === link.href
+                        ? isScrolled
+                          ? "bg-primary/10 text-primary"
+                          : "bg-white/20 text-white"
+                        : isScrolled
+                        ? "text-foreground/80 hover:text-foreground hover:bg-muted"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
+                    data-testid={`link-nav-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              )
+            )}
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
@@ -78,7 +126,11 @@ export function Header() {
               <Button
                 variant={isScrolled ? "default" : "secondary"}
                 size="sm"
-                className={!isScrolled ? "bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm" : ""}
+                className={
+                  !isScrolled
+                    ? "bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm"
+                    : ""
+                }
               >
                 <Phone className="w-4 h-4 mr-1" />
                 {companyInfo.phoneFormatted}
@@ -101,11 +153,15 @@ export function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between pb-6 border-b">
                     <span className="font-heading font-bold text-xl">
-                      White Wall <span className="text-primary">Renovation</span>
+                      White Wall{" "}
+                      <span className="text-primary">Renovation</span>
                     </span>
                   </div>
 
-                  <nav className="flex flex-col gap-1 py-6" aria-label="Mobile navigation">
+                  <nav
+                    className="flex flex-col gap-1 py-6"
+                    aria-label="Mobile navigation"
+                  >
                     {navLinks.map((link) => (
                       <SheetClose asChild key={link.href}>
                         <Link href={link.href}>

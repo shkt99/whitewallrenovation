@@ -15,8 +15,12 @@ import { services, companyInfo } from "@shared/schema";
 
 import aboutImage from "@assets/generated_images/modern_living_room_renovation.png";
 import ctaImage from "@assets/generated_images/home_exterior_renovation.png";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <main id="main-content">
       <SEO
@@ -26,7 +30,10 @@ export default function Home() {
       />
       <Hero />
 
-      <section className="py-16 md:py-24 bg-background" aria-labelledby="about-heading">
+      <section
+        className="py-16 md:py-24 bg-background"
+        aria-labelledby="about-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -40,14 +47,18 @@ export default function Home() {
                 Upgrade Your Living Space with White Wall Renovation
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
-                Are you dreaming of a home that reflects your style, meets your needs, 
-                and stands the test of time? At White Wall Renovation, we turn your vision 
-                into reality. As Ontario's trusted house renovation experts, we bring a 
-                perfect blend of craftsmanship, innovation, and personalized service to 
-                every project.
+                Are you dreaming of a home that reflects your style, meets your
+                needs, and stands the test of time? At White Wall Renovation, we
+                turn your vision into reality. As Ontario's trusted house
+                renovation experts, we bring a perfect blend of craftsmanship,
+                innovation, and personalized service to every project.
               </p>
               <Link href="/about">
-                <Button variant="outline" size="lg" data-testid="button-about-learn-more">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  data-testid="button-about-learn-more"
+                >
                   Learn More About Us
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -64,23 +75,43 @@ export default function Home() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-2xl md:text-3xl font-bold text-primary">
-                        <AnimatedCounter end={500} duration={2000} isNumber={true} />+
+                        <AnimatedCounter
+                          end={500}
+                          duration={2000}
+                          isNumber={true}
+                        />
+                        +
                       </p>
-                      <p className="text-sm text-muted-foreground">Projects Completed</p>
+                      <p className="text-sm text-muted-foreground">
+                        Projects Completed
+                      </p>
                     </div>
                     <div className="h-12 w-px bg-border" />
                     <div>
                       <p className="text-2xl md:text-3xl font-bold text-primary">
-                        <AnimatedCounter end={15} duration={2000} isNumber={true} />+
+                        <AnimatedCounter
+                          end={15}
+                          duration={2000}
+                          isNumber={true}
+                        />
+                        +
                       </p>
-                      <p className="text-sm text-muted-foreground">Years Experience</p>
+                      <p className="text-sm text-muted-foreground">
+                        Years Experience
+                      </p>
                     </div>
                     <div className="h-12 w-px bg-border" />
                     <div>
                       <p className="text-2xl md:text-3xl font-bold text-primary">
-                        <AnimatedCounter end={100} duration={2000} isNumber={false} />
+                        <AnimatedCounter
+                          end={100}
+                          duration={2000}
+                          isNumber={false}
+                        />
                       </p>
-                      <p className="text-sm text-muted-foreground">Satisfaction</p>
+                      <p className="text-sm text-muted-foreground">
+                        Satisfaction
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -90,7 +121,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-muted" aria-labelledby="why-heading">
+      <section
+        className="py-16 md:py-24 bg-muted"
+        aria-labelledby="why-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
@@ -107,7 +141,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background" aria-labelledby="services-heading">
+      <section
+        className="py-16 md:py-24 bg-background"
+        aria-labelledby="services-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
@@ -120,8 +157,9 @@ export default function Home() {
               Our Comprehensive Renovation Services
             </h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              From basement transformations to beautiful outdoor spaces, we offer a 
-              complete range of renovation services tailored to your needs.
+              From basement transformations to beautiful outdoor spaces, we
+              offer a complete range of renovation services tailored to your
+              needs.
             </p>
           </div>
           <ServicesGrid services={services} columns={4} />
@@ -136,7 +174,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-muted" aria-labelledby="gallery-heading">
+      <section
+        className="py-16 md:py-24 bg-muted"
+        aria-labelledby="gallery-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
@@ -149,14 +190,19 @@ export default function Home() {
               Transforming Houses Into Homes
             </h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              Transforming houses into homes is not just a job for us; it's a commitment 
-              to crafting living spaces that echo the unique stories and aspirations of our clients.
+              Transforming houses into homes is not just a job for us; it's a
+              commitment to crafting living spaces that echo the unique stories
+              and aspirations of our clients.
             </p>
           </div>
           <ProjectGallery limit={6} showFilters={false} />
           <div className="text-center mt-10">
             <Link href="/gallery">
-              <Button variant="outline" size="lg" data-testid="button-view-gallery">
+              <Button
+                variant="outline"
+                size="lg"
+                data-testid="button-view-gallery"
+              >
                 View Full Gallery
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -172,7 +218,10 @@ export default function Home() {
         description="Are you prepared to take a trip to alter your house? Discover how White Wall Renovation can help you realise your dream house."
       />
 
-      <section className="py-16 md:py-24 bg-background" aria-labelledby="testimonials-heading">
+      <section
+        className="py-16 md:py-24 bg-background"
+        aria-labelledby="testimonials-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
@@ -185,15 +234,19 @@ export default function Home() {
               What Our Clients Are Saying
             </h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers 
-              have to say about their experience with White Wall Renovation.
+              Don't just take our word for it. Here's what our satisfied
+              customers have to say about their experience with White Wall
+              Renovation.
             </p>
           </div>
           <TestimonialCarousel />
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-muted" aria-labelledby="faq-heading">
+      <section
+        className="py-16 md:py-24 bg-muted"
+        aria-labelledby="faq-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
@@ -207,8 +260,9 @@ export default function Home() {
                 Frequently Asked Questions
               </h2>
               <p className="text-muted-foreground text-base md:text-lg mb-8">
-                Have questions about our renovation services? We've got answers. 
-                If you don't see your question here, feel free to contact us directly.
+                Have questions about our renovation services? We've got answers.
+                If you don't see your question here, feel free to contact us
+                directly.
               </p>
               <FAQAccordion />
             </div>
