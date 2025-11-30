@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Hero } from "@/components/sections/Hero";
@@ -24,23 +25,27 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">
+            <motion.div className="order-2 lg:order-1" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <motion.span className="text-primary font-medium text-sm uppercase tracking-wider" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.6 }} viewport={{ once: true }}>
                 About Us
-              </span>
-              <h2
+              </motion.span>
+              <motion.h2
                 id="about-heading"
                 className="font-heading font-bold text-3xl md:text-4xl mt-2 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
               >
                 Upgrade Your Living Space with White Wall Renovation
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
+              </motion.h2>
+              <motion.p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }} viewport={{ once: true }}>
                 Are you dreaming of a home that reflects your style, meets your
                 needs, and stands the test of time? At White Wall Renovation, we
                 turn your vision into reality. As Ontario&apos;s trusted house
                 renovation experts, we bring a perfect blend of craftsmanship,
                 innovation, and personalized service to every project.
-              </p>
+              </motion.p>
               <Link href="/about">
                 <Button
                   variant="outline"
@@ -51,7 +56,7 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
-            </div>
+            </motion.div>
             <div className="order-1 lg:order-2">
               <div className="relative rounded-lg overflow-hidden aspect-[4/3]">
                 <Image
@@ -117,17 +122,21 @@ export default function Home() {
         aria-labelledby="why-heading"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <motion.span className="text-primary font-medium text-sm uppercase tracking-wider" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.6 }} viewport={{ once: true }}>
               Why Choose Us
-            </span>
-            <h2
+            </motion.span>
+            <motion.h2
               id="why-heading"
               className="font-heading font-bold text-3xl md:text-4xl mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Why Choose White Wall Renovation?
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
           <WhyChooseUs />
         </div>
       </section>
@@ -137,22 +146,26 @@ export default function Home() {
         aria-labelledby="services-heading"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <motion.span className="text-primary font-medium text-sm uppercase tracking-wider" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.6 }} viewport={{ once: true }}>
               Our Services
-            </span>
-            <h2
+            </motion.span>
+            <motion.h2
               id="services-heading"
               className="font-heading font-bold text-3xl md:text-4xl mt-2 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Our Comprehensive Renovation Services
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }} viewport={{ once: true }}>
               From basement transformations to beautiful outdoor spaces, we
               offer a complete range of renovation services tailored to your
               needs.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           <ServicesGrid services={services} columns={4} />
           <div className="text-center mt-10">
             <Link href="/services">
@@ -170,22 +183,26 @@ export default function Home() {
         aria-labelledby="gallery-heading"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <motion.span className="text-primary font-medium text-sm uppercase tracking-wider" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.6 }} viewport={{ once: true }}>
               Our Work
-            </span>
-            <h2
+            </motion.span>
+            <motion.h2
               id="gallery-heading"
               className="font-heading font-bold text-3xl md:text-4xl mt-2 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Transforming Houses Into Homes
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }} viewport={{ once: true }}>
               Transforming houses into homes is not just a job for us; it&apos;s a
               commitment to crafting living spaces that echo the unique stories
               and aspirations of our clients.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           <ProjectGallery limit={6} showFilters={false} />
           <div className="text-center mt-10">
             <Link href="/gallery">
@@ -214,13 +231,17 @@ export default function Home() {
         aria-labelledby="testimonials-heading"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <motion.span className="text-primary font-medium text-sm uppercase tracking-wider" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.6 }} viewport={{ once: true }}>
               Testimonials
-            </span>
-            <h2
+            </motion.span>
+            <motion.h2
               id="testimonials-heading"
               className="font-heading font-bold text-3xl md:text-4xl mt-2 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
             >
               What Our Clients Are Saying
             </h2>
