@@ -8,8 +8,8 @@ import { CTASection } from "@/components/sections/CTASection";
 import { SEO } from "@/components/SEO";
 
 import heroImage from "@assets/generated_images/modern_living_room_renovation.png";
-import beforeImage from "@assets/generated_images/drywall_installation_work.png";
-import afterImage from "@assets/generated_images/hardwood_flooring_installation.png";
+import beforeImage from "@assets/generated_images/worn_bathroom_before_renovation.png";
+import afterImage from "@assets/generated_images/modern_bathroom_after_renovation.png";
 
 export default function Gallery() {
   return (
