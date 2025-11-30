@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,16 +57,14 @@ export function Header() {
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" data-testid="link-logo" onClick={handleHomeClick}>
-            <span className="font-heading font-bold text-xl md:text-2xl tracking-tight">
-              <span className={isScrolled ? "text-foreground" : "text-white"}>
-                White Wall
-              </span>
-              <span className={isScrolled ? "text-primary" : "text-white/90"}>
-                {" "}
-                Renovation
-              </span>
-            </span>
+          <Link href="/" data-testid="link-logo" onClick={handleHomeClick} className="flex items-center">
+            <Image 
+              src="/images/logo.webp" 
+              alt="White Wall Renovation Logo"
+              width={120}
+              height={50}
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
