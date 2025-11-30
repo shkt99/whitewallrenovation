@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceCarousel } from "@/components/sections/ServiceCarousel";
 import { services, companyInfo } from "@/lib/schema";
 
 const serviceImages: Record<string, string> = {
@@ -71,7 +72,6 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
   }
 
   const heroImage = serviceImages[service.id] || "/images/basement_renovation_before-after.png";
-  const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
 
   return (
     <main id="main-content">
@@ -190,46 +190,15 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
               id="related-heading"
               className="font-heading font-bold text-2xl md:text-3xl"
             >
-              Other Services You Might Like
+              Explore All Our Services
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedServices.map((relatedService) => (
-              <Card
-                key={relatedService.id}
-                className="overflow-visible border border-border bg-card hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="aspect-video overflow-hidden rounded-t-lg relative">
-                  <Image
-                    src={serviceImages[relatedService.id] || "/images/basement_renovation_before-after.png"}
-                    alt={relatedService.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <h3 className="font-heading font-semibold text-lg mb-2">
-                    {relatedService.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                    {relatedService.shortDescription}
-                  </p>
-                  <Link href={`/services/${relatedService.id}`}>
-                    <Button
-                      variant="ghost"
-                      className="p-0 h-auto font-medium text-primary hover:text-primary/80 hover:bg-transparent"
-                      data-testid={`button-related-${relatedService.id}`}
-                    >
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <ServiceCarousel 
+            services={services} 
+            serviceImages={serviceImages}
+            currentServiceId={service.id}
+          />
         </div>
       </section>
 
