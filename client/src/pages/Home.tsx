@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesGrid } from "@/components/sections/ServiceCard";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
@@ -62,17 +63,23 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-2xl md:text-3xl font-bold text-primary">500+</p>
+                      <p className="text-2xl md:text-3xl font-bold text-primary">
+                        <AnimatedCounter end={500} duration={2000} isNumber={true} />+
+                      </p>
                       <p className="text-sm text-muted-foreground">Projects Completed</p>
                     </div>
                     <div className="h-12 w-px bg-border" />
                     <div>
-                      <p className="text-2xl md:text-3xl font-bold text-primary">15+</p>
+                      <p className="text-2xl md:text-3xl font-bold text-primary">
+                        <AnimatedCounter end={15} duration={2000} isNumber={true} />+
+                      </p>
                       <p className="text-sm text-muted-foreground">Years Experience</p>
                     </div>
                     <div className="h-12 w-px bg-border" />
                     <div>
-                      <p className="text-2xl md:text-3xl font-bold text-primary">100%</p>
+                      <p className="text-2xl md:text-3xl font-bold text-primary">
+                        <AnimatedCounter end={100} duration={2000} isNumber={false} />
+                      </p>
                       <p className="text-sm text-muted-foreground">Satisfaction</p>
                     </div>
                   </div>
