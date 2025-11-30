@@ -59,7 +59,7 @@ export default function Home() {
                   alt="Modern home renovation by White Wall Renovation"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-card/95 backdrop-blur-sm rounded-lg p-4 md:p-6">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-2xl md:text-3xl font-bold text-primary">500+</p>

@@ -4,7 +4,6 @@ import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { companyInfo } from "@shared/schema";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -71,8 +70,6 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <ThemeToggle isScrolled={isScrolled} />
-            
             <a
               href={`tel:${companyInfo.phone}`}
               className="hidden md:flex items-center gap-2"
