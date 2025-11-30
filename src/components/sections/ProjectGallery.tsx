@@ -79,36 +79,23 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
         </div>
       )}
 
-      <motion.div 
+      <div 
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.05,
-            },
-          },
-        }}
       >
         {displayProjects.map((project, index) => (
           <motion.div
             key={project.id}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
             className="group relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
             onClick={() => openLightbox(index)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => e.key === "Enter" && openLightbox(index)}
             data-testid={`gallery-item-${project.id}`}
-            variants={{
-              hidden: { opacity: 0, scale: 0.9 },
-              visible: { opacity: 1, scale: 1 },
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
           >
             <Image
               src={project.image}
@@ -127,7 +114,7 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
         <DialogContent className="max-w-5xl w-full p-0 bg-black/95 border-0" aria-describedby={undefined}>

@@ -21,13 +21,7 @@ export function CTASection({
 }: CTASectionProps) {
   if (variant === "image" && backgroundImage) {
     return (
-      <motion.section 
-        className="relative py-20 md:py-28 overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -42,24 +36,12 @@ export function CTASection({
           viewport={{ once: true }}
         >
           <div className="max-w-2xl">
-            <motion.h2 
-              className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               {title}
-            </motion.h2>
-            <motion.p 
-              className="text-white/80 text-base md:text-lg mb-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            </h2>
+            <p className="text-white/80 text-base md:text-lg mb-8">
               {description}
-            </motion.p>
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button
@@ -82,10 +64,10 @@ export function CTASection({
                   {companyInfo.phoneFormatted}
                 </Button>
               </a>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
-      </motion.section>
+      </section>
     );
   }
 

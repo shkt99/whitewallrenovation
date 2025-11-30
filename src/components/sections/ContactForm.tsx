@@ -89,15 +89,15 @@ export function ContactForm({ showCard = true, onSuccess }: ContactFormProps) {
             <p className="text-muted-foreground mb-6">
               Your message has been sent successfully. We'll get back to you within 24 hours.
             </p>
-          <Button
-            variant="outline"
-            onClick={() => setIsSubmitted(false)}
-            data-testid="button-send-another"
-          >
-            Send Another Message
-          </Button>
-        </CardContent>
-      </Card>
+            <Button
+              variant="outline"
+              onClick={() => setIsSubmitted(false)}
+              data-testid="button-send-another"
+            >
+              Send Another Message
+            </Button>
+          </CardContent>
+        </Card>
       </motion.div>
     );
   }
