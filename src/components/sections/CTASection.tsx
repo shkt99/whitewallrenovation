@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
