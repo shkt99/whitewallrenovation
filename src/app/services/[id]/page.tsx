@@ -190,7 +190,7 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
               id="related-heading"
               className="font-heading font-bold text-2xl md:text-3xl"
             >
-              Explore All Our Services
+              Other Services You Might Like
             </h2>
           </div>
 
