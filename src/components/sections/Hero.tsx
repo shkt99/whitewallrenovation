@@ -91,7 +91,7 @@ export function Hero({
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="min-w-[200px] bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                  className="min-w-[200px] bg-accent hover:bg-accent/90 text-black font-semibold"
                   data-testid="button-hero-quote"
                 >
                   Get Free Quote
