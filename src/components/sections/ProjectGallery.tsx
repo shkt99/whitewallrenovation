@@ -117,23 +117,23 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-5xl w-full p-0 bg-black/95 border-0" aria-describedby={undefined}>
+        <DialogContent className="max-w-5xl w-full p-0 bg-black/95 border-0 relative" aria-describedby={undefined}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+            data-testid="button-close-lightbox"
+          >
+            <X className="w-6 h-6" />
+          </Button>
           <VisuallyHidden>
             <DialogTitle>
               {selectedImage !== null ? displayProjects[selectedImage].title : "Gallery Image"}
             </DialogTitle>
           </VisuallyHidden>
           <div className="relative">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
-              onClick={closeLightbox}
-              aria-label="Close lightbox"
-              data-testid="button-close-lightbox"
-            >
-              <X className="w-6 h-6" />
-            </Button>
 
             {selectedImage !== null && (
               <>
