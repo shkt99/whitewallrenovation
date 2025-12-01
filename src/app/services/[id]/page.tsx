@@ -26,22 +26,26 @@ const processSteps = [
   {
     step: 1,
     title: "Initial Consultation",
-    description: "We start with a detailed discussion of your vision, needs, and budget.",
+    description:
+      "We start with a detailed discussion of your vision, needs, and budget.",
   },
   {
     step: 2,
     title: "Project Planning",
-    description: "Our team creates a comprehensive plan with timeline and material selections.",
+    description:
+      "Our team creates a comprehensive plan with timeline and material selections.",
   },
   {
     step: 3,
     title: "Expert Execution",
-    description: "Skilled craftsmen bring your vision to life with attention to every detail.",
+    description:
+      "Skilled craftsmen bring your vision to life with attention to every detail.",
   },
   {
     step: 4,
     title: "Final Walkthrough",
-    description: "We ensure everything meets your expectations before project completion.",
+    description:
+      "We ensure everything meets your expectations before project completion.",
   },
 ];
 
@@ -51,7 +55,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
   const service = services.find((s) => s.id === params.id);
   if (!service) {
     return {
@@ -60,7 +68,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   }
   return {
     title: `${service.title} | White Wall Renovation - Ontario`,
-    description: `${service.shortDescription} Professional ${service.title.toLowerCase()} services by White Wall Renovation in Ontario. Get a free quote today!`,
+    description: `${
+      service.shortDescription
+    } Professional ${service.title.toLowerCase()} services by White Wall Renovation in Ontario. Get a free quote today!`,
   };
 }
 
@@ -71,7 +81,8 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
     notFound();
   }
 
-  const heroImage = serviceImages[service.id] || "/images/basement_renovation_before-after.png";
+  const heroImage =
+    serviceImages[service.id] || "/images/basement_renovation_before-after.png";
 
   return (
     <main id="main-content">
@@ -81,7 +92,10 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
         backgroundImage={heroImage}
       />
 
-      <section className="py-16 md:py-24 bg-background" aria-labelledby="service-heading">
+      <section
+        className="py-16 md:py-24 bg-background"
+        aria-labelledby="service-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             <div className="lg:col-span-2">
@@ -176,7 +190,10 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-muted" aria-labelledby="related-heading">
+      <section
+        className="py-16 md:py-24 bg-muted"
+        aria-labelledby="related-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
@@ -187,8 +204,8 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
             </h2>
           </div>
 
-          <ServiceCarousel 
-            services={services} 
+          <ServiceCarousel
+            services={[...services]}
             serviceImages={serviceImages}
             currentServiceId={service.id}
           />
