@@ -117,7 +117,12 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-5xl w-full p-4 bg-black/95 border-0 relative" aria-describedby={undefined}>
+        <DialogContent className="max-w-6xl w-screen h-screen max-h-screen p-0 bg-black/95 border-0 flex items-center justify-center" aria-describedby={undefined}>
+          <VisuallyHidden>
+            <DialogTitle>
+              {selectedImage !== null ? displayProjects[selectedImage].title : "Gallery Image"}
+            </DialogTitle>
+          </VisuallyHidden>
           <Button
             variant="ghost"
             size="icon"
@@ -128,57 +133,50 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
           >
             <X className="w-6 h-6" />
           </Button>
-          <VisuallyHidden>
-            <DialogTitle>
-              {selectedImage !== null ? displayProjects[selectedImage].title : "Gallery Image"}
-            </DialogTitle>
-          </VisuallyHidden>
-          <div className="relative">
 
-            {selectedImage !== null && (
-              <>
-                <div className="relative w-full h-[80vh]">
-                  <Image
-                    src={displayProjects[selectedImage].image}
-                    alt={displayProjects[selectedImage].title}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                  />
-                </div>
-                <div className="absolute bottom-4 left-0 right-0 text-center">
-                  <p className="text-white font-semibold text-lg">
-                    {displayProjects[selectedImage].title}
-                  </p>
-                  <p className="text-white/70 text-sm">
-                    {displayProjects[selectedImage].category}
-                  </p>
-                </div>
+          {selectedImage !== null && (
+            <>
+              <div className="relative w-full h-[85vh] flex items-center justify-center">
+                <Image
+                  src={displayProjects[selectedImage].image}
+                  alt={displayProjects[selectedImage].title}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="absolute bottom-8 left-0 right-0 text-center z-10">
+                <p className="text-white font-semibold text-lg">
+                  {displayProjects[selectedImage].title}
+                </p>
+                <p className="text-white/70 text-sm">
+                  {displayProjects[selectedImage].category}
+                </p>
+              </div>
 
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20"
-                  onClick={goToPrev}
-                  aria-label="Previous image"
-                  data-testid="button-lightbox-prev"
-                >
-                  <ChevronLeft className="w-8 h-8" />
-                </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+                onClick={goToPrev}
+                aria-label="Previous image"
+                data-testid="button-lightbox-prev"
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </Button>
 
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20"
-                  onClick={goToNext}
-                  aria-label="Next image"
-                  data-testid="button-lightbox-next"
-                >
-                  <ChevronRight className="w-8 h-8" />
-                </Button>
-              </>
-            )}
-          </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+                onClick={goToNext}
+                aria-label="Next image"
+                data-testid="button-lightbox-next"
+              >
+                <ChevronRight className="w-8 h-8" />
+              </Button>
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </div>
