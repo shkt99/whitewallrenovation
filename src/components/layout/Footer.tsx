@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-t" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="space-y-4">
             <Link href="/" data-testid="link-footer-logo">
               <span className="font-heading font-bold text-xl">
@@ -64,6 +64,32 @@ export function Footer() {
                   >
                     {service.title}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-heading font-semibold text-lg mb-4">
+              Service Areas
+            </h3>
+            <ul className="space-y-2">
+              {[
+                "Guelph",
+                "Cambridge",
+                "Kitchener",
+                "Waterloo",
+                "Fergus",
+                "Elora",
+                "Mississauga",
+                "Oakville",
+                "Brantford",
+                "Brampton",
+              ].map((location) => (
+                <li key={location}>
+                  <span className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    {location}
+                  </span>
                 </li>
               ))}
             </ul>
