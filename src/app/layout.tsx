@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     images: [
       {
-        url: `/images/modern_living_room_renovation.png`,
+        url: `/images/twitter.png`,
         width: 1200,
         height: 630,
         alt: "White Wall Renovation - Home Transformation",
@@ -63,7 +63,12 @@ export const metadata: Metadata = {
     title: `${companyInfo.name} | Ontario's Premier Home Renovation Experts`,
     description:
       "Transform your home with White Wall Renovation. Expert basement renovation, flooring, tiling, deck construction, interior painting & more.",
-    images: [`/images/modern_living_room_renovation.png`],
+    images: [`/images/twitter.png`],
+  },
+
+  icons: {
+    icon: "/images/logo_white_background.png",
+    apple: "/images/logo_white_background.png",
   },
   robots: {
     index: true,
@@ -125,12 +130,17 @@ export default function RootLayout({
         <meta name="theme-color" content="#1e4b8f" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <link rel="manifest" href="/manifest.json" />
         <Script
           id="organization-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
           strategy="afterInteractive"
         />
       </head>
