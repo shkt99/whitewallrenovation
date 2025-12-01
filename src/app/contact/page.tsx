@@ -7,8 +7,32 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { companyInfo } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact Us | White Wall Renovation - Get Your Free Quote",
+  title: "Contact Us | White Wall Renovation - Free Quote & Consultation",
   description: "Ready to transform your home? Contact White Wall Renovation for a free consultation and quote. Call (519) 731-6242 or fill out our contact form today.",
+  keywords: [
+    "contact renovation",
+    "free quote",
+    "consultation",
+    "home renovation",
+    "renovation contractor",
+  ],
+  openGraph: {
+    title: "Contact Us | White Wall Renovation",
+    description: "Get in touch with White Wall Renovation for your home transformation.",
+    type: "website",
+    url: "https://whitewallrenovation.com/contact",
+    images: [
+      {
+        url: `/images/luxury_bathroom_renovation.png`,
+        width: 1200,
+        height: 630,
+        alt: "Contact White Wall Renovation",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://whitewallrenovation.com/contact",
+  },
 };
 
 export default function Contact() {

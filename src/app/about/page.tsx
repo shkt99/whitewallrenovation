@@ -10,7 +10,31 @@ import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "About Us | White Wall Renovation - Ontario Home Renovation Experts",
-  description: "Learn about White Wall Renovation, Ontario's trusted home renovation company. Our experienced team delivers quality craftsmanship and personalized service for every project.",
+  description: "Learn about White Wall Renovation, Ontario's trusted home renovation company with 15+ years of experience. Our team delivers quality craftsmanship and personalized service.",
+  keywords: [
+    "about White Wall Renovation",
+    "renovation company Ontario",
+    "experienced contractors",
+    "home renovation experts",
+    "trusted renovation team",
+  ],
+  openGraph: {
+    title: "About Us | White Wall Renovation",
+    description: "Learn about our commitment to excellence and quality craftsmanship.",
+    type: "website",
+    url: "https://whitewallrenovation.com/about",
+    images: [
+      {
+        url: `/images/modern_kitchen_renovation.png`,
+        width: 1200,
+        height: 630,
+        alt: "White Wall Renovation Team",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://whitewallrenovation.com/about",
+  },
 };
 
 export default function About() {

@@ -9,7 +9,33 @@ import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "Project Gallery | White Wall Renovation - Before & After Transformations",
-  description: "Browse our gallery of stunning home renovation projects. See before and after transformations of basements, bathrooms, kitchens, decks, and more across Ontario.",
+  description: "Browse our gallery of stunning home renovation projects. See before and after transformations of basements, bathrooms, kitchens, decks, and more across Ontario. Real projects by White Wall Renovation.",
+  keywords: [
+    "renovation gallery",
+    "before and after",
+    "project portfolio",
+    "home renovations",
+    "basement renovations",
+    "kitchen renovations",
+    "bathroom renovations",
+  ],
+  openGraph: {
+    title: "Project Gallery | White Wall Renovation",
+    description: "See our stunning before and after renovation transformations.",
+    type: "website",
+    url: "https://whitewallrenovation.com/gallery",
+    images: [
+      {
+        url: `/images/modern_living_room_renovation.png`,
+        width: 1200,
+        height: 630,
+        alt: "White Wall Renovation Gallery",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://whitewallrenovation.com/gallery",
+  },
 };
 
 export default function Gallery() {

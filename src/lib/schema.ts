@@ -201,3 +201,75 @@ export const companyInfo = {
     linkedin: "#",
   },
 } as const;
+
+export function generateOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: companyInfo.name,
+    image: "https://whitewallrenovation.com/images/logo.png",
+    description:
+      "Ontario's premier home renovation company specializing in basement renovations, flooring, tiling, deck construction, and more.",
+    url: "https://whitewallrenovation.com",
+    telephone: companyInfo.phone,
+    email: companyInfo.email,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "CA",
+      addressRegion: "ON",
+    },
+    priceRange: "$$",
+    areaServed: "ON",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "15",
+    },
+  };
+}
+
+export function generateServiceSchema(serviceTitle: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `${serviceTitle} - White Wall Renovation`,
+    description,
+    provider: {
+      "@type": "LocalBusiness",
+      name: companyInfo.name,
+      url: "https://whitewallrenovation.com",
+    },
+    areaServed: "ON",
+    availableLanguage: "en-CA",
+  };
+}
+
+export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function generateFAQSchema(
+  faqs: Array<{ question: string; answer: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}

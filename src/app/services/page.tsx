@@ -8,7 +8,34 @@ import { services, companyInfo } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Our Services | White Wall Renovation - Basement, Flooring, Tiling & More",
-  description: "Explore White Wall Renovation's comprehensive home renovation services: basement finishing, tiling, flooring, deck construction, interior painting, drywall, and handyman services.",
+  description: "Explore our comprehensive home renovation services: basement finishing, tiling, flooring, deck construction, interior painting, drywall installation, and handyman services across Ontario.",
+  keywords: [
+    "renovation services Ontario",
+    "basement renovation",
+    "flooring installation",
+    "tiling services",
+    "deck construction",
+    "interior painting",
+    "drywall installation",
+    "handyman services",
+  ],
+  openGraph: {
+    title: "Our Services | White Wall Renovation",
+    description: "Professional home renovation services tailored to your needs.",
+    type: "website",
+    url: "https://whitewallrenovation.com/services",
+    images: [
+      {
+        url: `/images/modern_kitchen_renovation.png`,
+        width: 1200,
+        height: 630,
+        alt: "White Wall Renovation Services",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://whitewallrenovation.com/services",
+  },
 };
 
 export default function Services() {

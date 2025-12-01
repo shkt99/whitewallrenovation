@@ -1,0 +1,17 @@
+{
+  "name": "White Wall Renovation",
+  "short_name": "White Wall",
+  "description": "Ontario's Premier Home Renovation Company",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e4b8f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}

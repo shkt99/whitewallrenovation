@@ -71,6 +71,30 @@ export async function generateMetadata({
     description: `${
       service.shortDescription
     } Professional ${service.title.toLowerCase()} services by White Wall Renovation in Ontario. Get a free quote today!`,
+    keywords: [
+      service.title.toLowerCase(),
+      "renovation",
+      "Ontario",
+      "professional service",
+      "home improvement",
+    ],
+    openGraph: {
+      title: `${service.title} | White Wall Renovation`,
+      description: service.shortDescription,
+      type: "website",
+      url: `https://whitewallrenovation.com/services/${service.id}`,
+      images: [
+        {
+          url: `/images/modern_kitchen_renovation.png`,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://whitewallrenovation.com/services/${service.id}`,
+    },
   };
 }
 
