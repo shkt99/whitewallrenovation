@@ -11,7 +11,7 @@ import type { Service } from "@/lib/schema";
 const serviceImages: Record<string, string> = {
   "basement-renovation": "/images/basement_renovation_before-after.png",
   "tiling-services": "/images/professional_bathroom_tiling.png",
-  "fence-installation": "/images/modern_fence_installation.png",
+  "bathroom-remodelling": "/images/bathroom_remodelling.png",
   "deck-construction": "/images/deck_construction_outdoor.png",
   "flooring-installation": "/images/hardwood_flooring_installation.png",
   "interior-painting": "/images/interior_painting_service.png",
