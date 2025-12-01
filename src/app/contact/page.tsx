@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Instagram, Facebook } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
@@ -142,10 +142,32 @@ export default function Contact() {
           >
             Connect with White Wall Renovation
           </h2>
-          <p className="text-primary-foreground/80 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 text-base md:text-lg max-w-2xl mx-auto mb-8">
             Stay connected with us for the latest updates, project showcases, and 
             home improvement tips. We&apos;re always here to help with your renovation needs.
           </p>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.instagram.com/whitewallrenovation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+              aria-label="Follow us on Instagram"
+              data-testid="link-contact-instagram"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.facebook.com/whitewallrenovation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
+              aria-label="Follow us on Facebook"
+              data-testid="link-contact-facebook"
+            >
+              <Facebook className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </section>
     </main>
