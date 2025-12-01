@@ -70,6 +70,102 @@ const galleryProjects = [
     title: "Interior Painting",
     category: "Interior",
   },
+  {
+    id: 11,
+    image: "/images/elegant_dining_room_remodel.png",
+    title: "Elegant Dining Room",
+    category: "Interior",
+  },
+  {
+    id: 12,
+    image: "/images/contemporary_bedroom_design.png",
+    title: "Contemporary Bedroom",
+    category: "Interior",
+  },
+  {
+    id: 13,
+    image: "/images/sleek_kitchen_island.png",
+    title: "Sleek Kitchen Island",
+    category: "Kitchen",
+  },
+  {
+    id: 14,
+    image: "/images/custom_cabinetry_kitchen.png",
+    title: "Custom Cabinetry",
+    category: "Kitchen",
+  },
+  {
+    id: 15,
+    image: "/images/gourmet_kitchen_layout.png",
+    title: "Gourmet Kitchen Layout",
+    category: "Kitchen",
+  },
+  {
+    id: 16,
+    image: "/images/spa_style_bathroom.png",
+    title: "Spa Style Bathroom",
+    category: "Bathroom",
+  },
+  {
+    id: 17,
+    image: "/images/modern_shower_enclosure.png",
+    title: "Modern Shower Enclosure",
+    category: "Bathroom",
+  },
+  {
+    id: 18,
+    image: "/images/marble_bathroom_vanity.png",
+    title: "Marble Bathroom Vanity",
+    category: "Bathroom",
+  },
+  {
+    id: 19,
+    image: "/images/finished_basement_living_space.png",
+    title: "Finished Basement Living Space",
+    category: "Basement",
+  },
+  {
+    id: 20,
+    image: "/images/basement_entertainment_room.png",
+    title: "Basement Entertainment Room",
+    category: "Basement",
+  },
+  {
+    id: 21,
+    image: "/images/polished_concrete_flooring.png",
+    title: "Polished Concrete Flooring",
+    category: "Flooring",
+  },
+  {
+    id: 22,
+    image: "/images/laminate_flooring_installation.png",
+    title: "Laminate Flooring Installation",
+    category: "Flooring",
+  },
+  {
+    id: 23,
+    image: "/images/luxury_vinyl_plank_flooring.png",
+    title: "Luxury Vinyl Plank",
+    category: "Flooring",
+  },
+  {
+    id: 24,
+    image: "/images/patio_expansion_outdoor.png",
+    title: "Patio Expansion",
+    category: "Outdoor",
+  },
+  {
+    id: 25,
+    image: "/images/landscape_design_outdoor.png",
+    title: "Landscape Design",
+    category: "Outdoor",
+  },
+  {
+    id: 26,
+    image: "/images/pergola_installation_outdoor.png",
+    title: "Pergola Installation",
+    category: "Outdoor",
+  },
 ];
 
 const categories = [
