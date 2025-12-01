@@ -10,26 +10,87 @@ import { Badge } from "@/components/ui/badge";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const galleryProjects = [
-  { id: 1, image: "/images/modern_living_room_renovation.png", title: "Modern Living Room", category: "Interior" },
-  { id: 2, image: "/images/modern_kitchen_renovation.png", title: "Kitchen Renovation", category: "Kitchen" },
-  { id: 3, image: "/images/basement_renovation_before-after.png", title: "Basement Transformation", category: "Basement" },
-  { id: 4, image: "/images/luxury_bathroom_renovation.png", title: "Luxury Bathroom", category: "Bathroom" },
-  { id: 5, image: "/images/hardwood_flooring_installation.png", title: "Hardwood Flooring", category: "Flooring" },
-  { id: 6, image: "/images/professional_bathroom_tiling.png", title: "Professional Tiling", category: "Bathroom" },
-  { id: 7, image: "/images/deck_construction_outdoor.png", title: "Deck Construction", category: "Outdoor" },
-  { id: 8, image: "/images/home_exterior_renovation.png", title: "Home Exterior", category: "Outdoor" },
-  { id: 9, image: "/images/modern_fence_installation.png", title: "Modern Fence", category: "Outdoor" },
-  { id: 10, image: "/images/interior_painting_service.png", title: "Interior Painting", category: "Interior" },
+  {
+    id: 1,
+    image: "/images/modern_living_room_renovation.png",
+    title: "Modern Living Room",
+    category: "Interior",
+  },
+  {
+    id: 2,
+    image: "/images/modern_kitchen_renovation.png",
+    title: "Kitchen Renovation",
+    category: "Kitchen",
+  },
+  {
+    id: 3,
+    image: "/images/basement_renovation_before-after.png",
+    title: "Basement Transformation",
+    category: "Basement",
+  },
+  {
+    id: 4,
+    image: "/images/luxury_bathroom_renovation.png",
+    title: "Luxury Bathroom",
+    category: "Bathroom",
+  },
+  {
+    id: 5,
+    image: "/images/hardwood_flooring_installation.png",
+    title: "Hardwood Flooring",
+    category: "Flooring",
+  },
+  {
+    id: 6,
+    image: "/images/professional_bathroom_tiling.png",
+    title: "Professional Tiling",
+    category: "Bathroom",
+  },
+  {
+    id: 7,
+    image: "/images/deck_construction_outdoor.png",
+    title: "Deck Construction",
+    category: "Outdoor",
+  },
+  {
+    id: 8,
+    image: "/images/home_exterior_renovation.png",
+    title: "Home Exterior",
+    category: "Outdoor",
+  },
+  {
+    id: 9,
+    image: "/images/modern_fence_installation.png",
+    title: "Modern Fence",
+    category: "Outdoor",
+  },
+  {
+    id: 10,
+    image: "/images/interior_painting_service.png",
+    title: "Interior Painting",
+    category: "Interior",
+  },
 ];
 
-const categories = ["All", "Interior", "Kitchen", "Bathroom", "Basement", "Flooring", "Outdoor"];
+const categories = [
+  "All",
+  "Interior",
+  "Kitchen",
+  "Bathroom",
+  "Basement",
+  "Flooring",
+  "Outdoor",
+];
 
 interface ProjectGalleryProps {
   limit?: number;
   showFilters?: boolean;
 }
 
-export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProps) {
+export function ProjectGallery({
+  limit,
+  showFilters = true,
+}: ProjectGalleryProps) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
@@ -37,7 +98,9 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
     (project) => activeCategory === "All" || project.category === activeCategory
   );
 
-  const displayProjects = limit ? filteredProjects.slice(0, limit) : filteredProjects;
+  const displayProjects = limit
+    ? filteredProjects.slice(0, limit)
+    : filteredProjects;
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -79,9 +142,7 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
         </div>
       )}
 
-      <div 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {displayProjects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -107,8 +168,13 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <ZoomIn className="w-8 h-8 text-white mb-2" />
-              <p className="text-white font-semibold text-lg">{project.title}</p>
-              <Badge variant="secondary" className="mt-2 bg-white/20 text-white border-0">
+              <p className="text-white font-semibold text-lg">
+                {project.title}
+              </p>
+              <Badge
+                variant="secondary"
+                className="mt-2 bg-white/20 text-white border-0"
+              >
                 {project.category}
               </Badge>
             </div>
@@ -117,17 +183,22 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-5xl w-full p-0 bg-black/95 border-0" aria-describedby={undefined}>
+        <DialogContent
+          className="max-w-5xl w-full p-0 bg-black/95 border-0"
+          aria-describedby={undefined}
+        >
           <VisuallyHidden>
             <DialogTitle>
-              {selectedImage !== null ? displayProjects[selectedImage].title : "Gallery Image"}
+              {selectedImage !== null
+                ? displayProjects[selectedImage].title
+                : "Gallery Image"}
             </DialogTitle>
           </VisuallyHidden>
-          <div className="relative">
+          <div className="abosolute">
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+              className=" border-2 h-8 w-8 z-10 text-white hover:bg-white/20"
               onClick={closeLightbox}
               aria-label="Close lightbox"
               data-testid="button-close-lightbox"
