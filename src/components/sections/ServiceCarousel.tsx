@@ -66,7 +66,7 @@ export function ServiceCarousel({ services, serviceImages, currentServiceId }: S
                 <Link href={`/services/${service.id}`}>
                   <Button
                     variant="ghost"
-                    className="p-0 h-auto font-medium text-primary hover:text-primary/80 hover:bg-transparent"
+                    className="p-0 h-auto font-medium text-accent hover:text-accent/80 hover:bg-transparent"
                     data-testid={`button-related-${service.id}`}
                   >
                     Learn More

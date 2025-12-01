@@ -56,7 +56,7 @@ export function ServiceCard({ service, showLearnMore = true }: ServiceCardProps)
           <Link href={`/services/${service.id}`}>
             <Button
               variant="ghost"
-              className="p-0 h-auto font-medium text-primary hover:text-primary/80 hover:bg-transparent group/btn"
+              className="p-0 h-auto font-medium text-accent hover:text-accent/80 hover:bg-transparent group/btn"
               data-testid={`button-service-${service.id}`}
             >
               Learn More
