@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { companyInfo, services } from "@/lib/schema";
+import MadeByBadge from "../madeBy";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,13 +17,16 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Transforming houses into homes across Ontario. Quality craftsmanship, 
-              personalized service, and results that exceed expectations.
+              Transforming houses into homes across Ontario. Quality
+              craftsmanship, personalized service, and results that exceed
+              expectations.
             </p>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {[
                 { href: "/", label: "Home" },
@@ -35,7 +39,9 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    data-testid={`link-footer-${link.label
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
                   >
                     {link.label}
                   </Link>
@@ -45,7 +51,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Our Services</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4">
+              Our Services
+            </h3>
             <ul className="space-y-2">
               {services.slice(0, 6).map((service) => (
                 <li key={service.id}>
@@ -62,7 +70,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4">
+              Contact Us
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -97,6 +107,7 @@ export function Footer() {
             &copy; {currentYear} {companyInfo.name}. All rights reserved.
           </p>
         </div>
+        <MadeByBadge />
       </div>
     </footer>
   );

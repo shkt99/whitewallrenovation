@@ -57,18 +57,16 @@ export function Header() {
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link 
-            href="/" 
-            data-testid="link-logo" 
-            onClick={handleHomeClick} 
+          <Link
+            href="/"
+            data-testid="link-logo"
+            onClick={handleHomeClick}
             className={`flex items-center rounded-lg p-2 transition-colors duration-300 ${
-              isScrolled 
-                ? "" 
-                : "bg-white/90"
+              isScrolled ? "" : "bg-white/90"
             }`}
           >
-            <Image 
-              src="/images/logo.png" 
+            <Image
+              src="/images/logo.png"
               alt="White Wall Renovation Logo"
               width={140}
               height={60}
