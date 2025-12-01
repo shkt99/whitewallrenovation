@@ -117,7 +117,7 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-5xl w-full p-0 bg-black/95 border-0 relative" aria-describedby={undefined}>
+        <DialogContent className="max-w-5xl w-full p-4 bg-black/95 border-0 relative" aria-describedby={undefined}>
           <Button
             variant="ghost"
             size="icon"
