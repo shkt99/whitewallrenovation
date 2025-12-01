@@ -63,7 +63,7 @@ export function Header() {
             onClick={handleHomeClick} 
             className={`flex items-center rounded-lg p-2 transition-colors duration-300 ${
               isScrolled 
-                ? "bg-background" 
+                ? "" 
                 : "bg-white/90"
             }`}
           >
