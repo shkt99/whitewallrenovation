@@ -39,7 +39,6 @@ function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
         
         <div className="flex items-center gap-3 pt-4 border-t border-border">
           <Avatar className="w-12 h-12">
-            <AvatarImage src={avatars[index % avatars.length]} alt={testimonial.name} />
             <AvatarFallback className="bg-primary/10 text-primary font-medium">
               {testimonial.name.split(" ").map((n) => n[0]).join("")}
             </AvatarFallback>
