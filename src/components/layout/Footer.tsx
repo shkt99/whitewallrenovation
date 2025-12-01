@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { companyInfo, services } from "@/lib/schema";
 import MadeByBadge from "../madeBy";
 
@@ -125,6 +125,28 @@ export function Footer() {
                 <span className="text-sm">{companyInfo.address}</span>
               </li>
             </ul>
+            <div className="flex gap-4 mt-4">
+              <a
+                href="https://www.instagram.com/whitewallrenovation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Instagram"
+                data-testid="link-footer-instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/whitewallrenovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Facebook"
+                data-testid="link-footer-facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
