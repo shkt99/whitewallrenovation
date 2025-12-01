@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { companyInfo, generateOrganizationSchema } from "@/lib/schema";
+import { companyInfo } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,13 +84,35 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: companyInfo.name,
+  image: `${BASE_URL}/images/logo.png`,
+  description:
+    "Ontario's premier home renovation company specializing in basement renovations, flooring, tiling, deck construction, and more.",
+  url: BASE_URL,
+  telephone: companyInfo.phone,
+  email: companyInfo.email,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "CA",
+    addressRegion: "ON",
+  },
+  priceRange: "$$",
+  areaServed: "ON",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "15",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const organizationSchema = generateOrganizationSchema();
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -104,9 +127,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="manifest" href="/manifest.json" />
-        <script
+        <Script
+          id="organization-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          strategy="afterInteractive"
         />
       </head>
       <body className={`${inter.variable} ${outfit.variable} antialiased`}>
