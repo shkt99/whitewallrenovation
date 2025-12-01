@@ -18,7 +18,6 @@ export default function Services() {
         title="White Wall Renovation"
         subtitle="Transforming Homes, One Project at a Time"
         backgroundImage="/images/modern_kitchen_renovation.png"
-        breadcrumbs={[{ label: "Services", href: "/services" }]}
       />
 
       <section className="py-16 md:py-24 bg-background" aria-labelledby="services-heading">

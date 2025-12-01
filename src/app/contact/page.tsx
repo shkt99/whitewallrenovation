@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
@@ -18,7 +18,6 @@ export default function Contact() {
         title="Contact White Wall Renovation"
         subtitle="Ready to Transform Your Home? Let's Get in Touch!"
         backgroundImage="/images/luxury_bathroom_renovation.png"
-        breadcrumbs={[{ label: "Contact", href: "/contact" }]}
       />
 
       <section className="py-16 md:py-24 bg-background" aria-labelledby="contact-heading">

@@ -79,10 +79,6 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
         title={service.title}
         subtitle={service.shortDescription}
         backgroundImage={heroImage}
-        breadcrumbs={[
-          { label: "Services", href: "/services" },
-          { label: service.title, href: `/services/${service.id}` },
-        ]}
       />
 
       <section className="py-16 md:py-24 bg-background" aria-labelledby="service-heading">

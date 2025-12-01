@@ -19,7 +19,6 @@ export default function Gallery() {
         title="Gallery"
         subtitle="Transformative Renovations by White Wall Renovation"
         backgroundImage="/images/modern_living_room_renovation.png"
-        breadcrumbs={[{ label: "Gallery", href: "/gallery" }]}
       />
 
       <section

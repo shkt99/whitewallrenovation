@@ -20,7 +20,6 @@ export default function About() {
         title="Your Trusted Partner in House Renovation"
         subtitle="Learn more about White Wall Renovation and our commitment to excellence"
         backgroundImage="/images/luxury_bathroom_renovation.png"
-        breadcrumbs={[{ label: "About", href: "/about" }]}
       />
 
       <section className="py-16 md:py-24 bg-background" aria-labelledby="about-intro">
