@@ -117,7 +117,7 @@ export function ProjectGallery({ limit, showFilters = true }: ProjectGalleryProp
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-6xl w-screen h-screen max-h-screen p-0 bg-black/95 border-0 flex items-center justify-center" aria-describedby={undefined}>
+        <DialogContent className="max-w-6xl w-screen h-screen max-h-screen p-0 bg-black/95 border-0 flex items-center justify-center relative" aria-describedby={undefined}>
           <VisuallyHidden>
             <DialogTitle>
               {selectedImage !== null ? displayProjects[selectedImage].title : "Gallery Image"}
