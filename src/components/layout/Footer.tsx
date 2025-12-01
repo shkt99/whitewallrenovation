@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 import { companyInfo, services } from "@/lib/schema";
-import MadeByBadge from "../madeBy";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -128,12 +128,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t">
+        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} {companyInfo.name}. All rights reserved.
           </p>
+          <Link
+            href="https://www.simpleflowtech.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <span>Powered by</span>
+            <Image
+              src="/images/sft.png"
+              alt="SimpleFlow Tech Logo"
+              width={16}
+              height={16}
+              className="rounded-full"
+            />
+            <span>SimpleFlow Tech</span>
+          </Link>
         </div>
-        <MadeByBadge />
       </div>
     </footer>
   );
