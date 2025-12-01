@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -46,6 +46,15 @@ export function ContactForm({ showCard = true, onSuccess }: ContactFormProps) {
       message: "",
     },
   });
+
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 15000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted]);
 
   const mutation = useMutation({
     mutationFn: async (data: InsertContact) => {
