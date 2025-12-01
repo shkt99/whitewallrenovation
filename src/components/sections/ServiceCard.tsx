@@ -24,15 +24,24 @@ interface ServiceCardProps {
   showLearnMore?: boolean;
 }
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 export function ServiceCard({ service, showLearnMore = true }: ServiceCardProps) {
   const image = serviceImages[service.id] || "/images/basement_renovation_before-after.png";
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={itemVariants}
+      initial="hidden"
+      whileInView="visible"
       whileHover={{ y: -8 }}
-      transition={{ duration: 0.4 }}
       viewport={{ once: true }}
     >
       <Card className="group overflow-visible border border-border bg-card transition-all duration-300 hover:shadow-lg">
