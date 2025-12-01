@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { companyInfo, services } from "@/lib/schema";
 
 export function Footer() {
@@ -83,10 +83,6 @@ export function Footer() {
                   <Mail className="w-4 h-4 mt-0.5 text-primary" />
                   <span className="text-sm break-all">{companyInfo.email}</span>
                 </a>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <Clock className="w-4 h-4 mt-0.5 text-primary" />
-                <span className="text-sm">{companyInfo.hours}</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary" />

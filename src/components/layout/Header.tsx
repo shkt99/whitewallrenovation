@@ -169,9 +169,6 @@ export function Header() {
                       <Phone className="w-5 h-5" />
                       Call {companyInfo.phoneFormatted}
                     </a>
-                    <p className="text-sm text-muted-foreground px-4">
-                      {companyInfo.hours}
-                    </p>
                   </div>
                 </div>
               </SheetContent>

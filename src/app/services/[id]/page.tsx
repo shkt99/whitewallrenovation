@@ -172,9 +172,6 @@ export default function ServiceDetail({ params }: { params: { id: string } }) {
                       <Phone className="w-5 h-5" />
                       {companyInfo.phoneFormatted}
                     </a>
-                    <p className="text-sm text-muted-foreground mt-3">
-                      {companyInfo.hours}
-                    </p>
                   </CardContent>
                 </Card>
               </div>

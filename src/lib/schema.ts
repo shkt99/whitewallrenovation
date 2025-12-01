@@ -194,7 +194,6 @@ export const companyInfo = {
   phone: "+1 519-731-6242",
   phoneFormatted: "(519) 731-6242",
   email: "whitewall.renovation@gmail.com",
-  hours: "Monday - Friday: 9am - 5pm",
   address: "Ontario, Canada",
   socialMedia: {
     facebook: "#",

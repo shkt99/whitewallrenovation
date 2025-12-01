@@ -92,16 +92,6 @@ export default function Contact() {
 
                         <div className="flex items-start gap-4">
                           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Clock className="w-5 h-5 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Hours</p>
-                            <p className="font-medium">{companyInfo.hours}</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                             <MapPin className="w-5 h-5 text-primary" />
                           </div>
                           <div>
