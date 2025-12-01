@@ -138,20 +138,6 @@ export default function Contact() {
                     </div>
                   </CardContent>
                 </Card>
-
-                <Card className="border border-border overflow-hidden">
-                  <div className="aspect-video bg-muted flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <MapPin className="w-12 h-12 text-muted-foreground/50 mx-auto mb-2" />
-                      <p className="text-muted-foreground text-sm">
-                        Serving Ontario, Canada
-                      </p>
-                      <p className="text-xs text-muted-foreground/70 mt-1">
-                        Contact us for service availability in your area
-                      </p>
-                    </div>
-                  </div>
-                </Card>
               </div>
             </div>
           </div>
