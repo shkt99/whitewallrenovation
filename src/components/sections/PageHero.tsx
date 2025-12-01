@@ -20,10 +20,9 @@ export function PageHero({
       aria-label="Page header"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundAttachment: "fixed",
         }}
         role="img"
         aria-label={title}

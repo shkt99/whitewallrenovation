@@ -54,10 +54,9 @@ export function Hero({
     >
       <div
         ref={imageRef}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform hero-bg"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundAttachment: "fixed",
         }}
         role="img"
         aria-label="Modern renovated home interior"
